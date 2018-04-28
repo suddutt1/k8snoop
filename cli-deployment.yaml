@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cli
+spec:
+  selector:
+    matchLabels:
+      name: cli
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: cli
+    spec:
+      containers:
+      - name: cli
+        image: suddutt1/noopserver:2.0.0
+        

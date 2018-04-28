@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: noopserver
+spec:
+  selector:
+    matchLabels:
+      run: noopserver
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: noopserver
+    spec:
+      containers:
+      - name: noopserver
+        image: suddutt1/noopserver:2.0.0
+        ports:
+        - containerPort: 8080
